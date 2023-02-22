@@ -1,10 +1,10 @@
-import sanityClient from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
+import sanityClient from "@sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
 
 const client = sanityClient({
-    projectId: 'q7vteilj',// ADD YOUR PROJECT ID INTO .env file aswell
-    dataset: 'production',
-    apiVersion:'2021-10-21', // CHG API VERSION TO AVOID BREAKING
+    projectId: "q7vteilj",// ADD YOUR PROJECT ID INTO .env file aswell
+    dataset: "production",
+    apiVersion:"2021-10-21", // CHG API VERSION TO AVOID BREAKING
     useCdn: true,
     
 });

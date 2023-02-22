@@ -8,11 +8,8 @@ const FeaturedRow = ({ id, title, description }) => {
     const [restaurants, setRestaurants] = useState([]);
 
     useEffect(() => {
-        if (id) {
-        sanityClient
-        .fetch(
-        `
-        *[_type == "featured" && _id == $id ] {
+        sanityClient.fetch(`
+        *[_type == "featured" && _id == $id] {
                 ...,
                 restaurants[]->{
                     ...,
@@ -21,20 +18,16 @@ const FeaturedRow = ({ id, title, description }) => {
                     name
                   }
                 },
-            }[0]
+            }[0]   
         `,
         { id }
         )
         .then((data) => {
             setRestaurants(data?.restaurants);
-        })
-        .catch((error) => {
-            console.error('Error fetching restaurants:', error);
         });
-    }
-},[id]);
+    }, [ id ]);
 
-console.log(restaurants);
+    console.log(restaurants);
 
     return (
         <View>
@@ -54,8 +47,8 @@ console.log(restaurants);
         className="pt-4"
         >
 
-
-        {restaurants?.map((restaurant, index) => (
+        {/* RestaurantCards...*/}
+       {restaurants?.map((restaurant, index) => (
             <RestaurantCard
             key={index}
             id={restaurant._id}
@@ -65,11 +58,12 @@ console.log(restaurants);
             dishes={restaurant.dishes} 
             rating={restaurant.rating}
             short_description={restaurant.short_description}
-            genre={restaurant.dishes?.name}
+            genre={restaurant.type?.name}
             long={restaurant.long}
             lat={restaurant.lat}
             />
         ))}
+
         </ScrollView>
         </View>
     );

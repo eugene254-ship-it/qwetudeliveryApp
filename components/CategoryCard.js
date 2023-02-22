@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Image } from "react-native";
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { View, Text, Image, TouchableOpacity } from "react-native";
+
 
 const CategoryCard = ({ imgUrl, title }) => {
   return (
@@ -18,4 +18,4 @@ const CategoryCard = ({ imgUrl, title }) => {
   );
 };
 
-export default CategoryCard
+export default CategoryCard;
