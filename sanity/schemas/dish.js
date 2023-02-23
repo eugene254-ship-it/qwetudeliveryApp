@@ -18,7 +18,7 @@ export default {
      {
     name: "price",
     type: "number",
-    title: "Price of the dish in KSH",
+    title: "Price of the dish in KES",
     },
      {
     name: "image",
