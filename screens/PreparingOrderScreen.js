@@ -4,12 +4,13 @@ import * as Animatable from "react-native-animatable";
 import * as Progress from "react-native-progress";
 import { useNavigation } from "@react-navigation/native";
 
+
 const PreparingOrderScreen = () => {
     const navigation = useNavigation();
 
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate("Delivery");
+            navigation.navigate("DeliveryScreen");
         }, 4000);
         },[]);
 
